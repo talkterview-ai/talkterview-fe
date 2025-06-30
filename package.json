@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "add:ui": "pnpm dlx shadcn@latest add"
+    "add:ui": "bunx --bun shadcn@latest"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
