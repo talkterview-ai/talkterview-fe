@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { redirect, useSearchParams } from "next/navigation";
 import { useLogin } from "../lib/hooks";
 import { OAUTH_PROVIDERS } from "@/shared/constants/oauth";
 import {
@@ -15,6 +15,7 @@ import {
 import { OAuthButton } from "@/app/(auth)/login/_entities/ui";
 import { oauthLogin } from "@/app/(auth)/login/_entities/api";
 import type { LoginProvider } from "@/app/(auth)/login/_entities/model/types";
+import { PATH } from "@/shared/constants/path";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();
@@ -25,7 +26,13 @@ const LoginForm = () => {
     if (!code || !provider) return;
 
     const login = async () => {
-      await oauthLogin({ provider, code });
+      try {
+        await oauthLogin({ provider, code });
+        redirect(PATH.dashboard);
+      } catch (error) {
+        console.error("login error: ", error);
+        throw error;
+      }
     };
 
     login();

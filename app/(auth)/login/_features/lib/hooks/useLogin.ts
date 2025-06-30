@@ -3,6 +3,8 @@
 import { useTransition } from "react";
 import type { LoginProvider } from "@/app/(auth)/login/_entities/model/types";
 import { guestLogin } from "@/app/(auth)/login/_entities/api";
+import { redirect } from "next/navigation";
+import { PATH } from "@/shared/constants/path";
 
 const useLogin = () => {
   const [isPending, startTransition] = useTransition();
@@ -16,6 +18,7 @@ const useLogin = () => {
   const handleGuestLogin = async () => {
     startTransition(async () => {
       await guestLogin();
+      redirect(PATH.dashboard);
     });
   };
 
