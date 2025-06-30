@@ -37,10 +37,10 @@ export class HttpCore {
     if (
       data.data &&
       typeof data.data === "object" &&
-      "tokenResponse" in data.data &&
-      data.data.tokenResponse
+      "token" in data.data &&
+      data.data.token
     ) {
-      const tokenData = data.data.tokenResponse as TokenResponse;
+      const tokenData = data.data.token as TokenResponse;
       await setToken(tokenData.accessToken);
     }
   }

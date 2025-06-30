@@ -9,7 +9,7 @@ const useLogin = () => {
 
   const handleOAuthLogin = (provider: LoginProvider) => {
     const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const authUrl = `${BASE_URL}/oauth2/login/${provider}/callback`;
+    const authUrl = `${BASE_URL}oauth2/login/${provider}/callback`;
     window.location.href = authUrl;
   };
 
