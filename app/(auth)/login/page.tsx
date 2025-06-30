@@ -1,10 +1,8 @@
-import { BrandingCard, LoginForm } from "./_components";
+import { NextPage } from "next";
+import { LoginPageView } from "./_modules";
 
-export default function LoginPage() {
-  return (
-    <div className="w-full max-w-4xl grid lg:grid-cols-2 gap-8 items-center">
-      <BrandingCard />
-      <LoginForm />
-    </div>
-  );
-}
+const LoginPage: NextPage = () => {
+  return <LoginPageView />;
+};
+
+export default LoginPage;
