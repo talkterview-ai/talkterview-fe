@@ -8,7 +8,7 @@ export const oauthLogin = async (
   payload: OAuthLoginRequest
 ): Promise<LoginResponse> => {
   const response = await fetchClient.post<LoginResponse, OAuthLoginRequest>(
-    "/oauth2/login",
+    "oauth2/login",
     { ...payload }
   );
 
@@ -16,6 +16,6 @@ export const oauthLogin = async (
 };
 
 export const guestLogin = async (): Promise<LoginResponse> => {
-  const response = await fetchClient.post<LoginResponse>("/guest/login");
+  const response = await fetchClient.post<LoginResponse>("guest/login");
   return response.data.data;
 };

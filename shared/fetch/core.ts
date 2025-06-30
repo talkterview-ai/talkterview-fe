@@ -37,10 +37,10 @@ export class HttpCore {
     if (
       data.data &&
       typeof data.data === "object" &&
-      "token" in data.data &&
-      data.data.token
+      "tokenResponse" in data.data &&
+      data.data.tokenResponse
     ) {
-      const tokenData = data.data.token as TokenResponse;
+      const tokenData = data.data.tokenResponse as TokenResponse;
       await setToken(tokenData.accessToken);
     }
   }
@@ -68,7 +68,6 @@ export class HttpCore {
     url: string,
     config: RequestConfig<D> = {}
   ): Promise<HttpResponse<T>> {
-    console.log("request", method, url, config, this.baseUrl);
     const fullUrl = new URL(url, this.baseUrl);
 
     if (config.params) {
