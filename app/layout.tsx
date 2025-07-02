@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Providers } from "@/shared/providers";
 
 import "@/shared/styles/index.css";
 
@@ -29,7 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={pretendard.className}>{children}</body>
+      <body className={pretendard.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
