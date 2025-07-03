@@ -1,6 +1,10 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+<<<<<<< HEAD
 import { Providers } from "@/base/providers";
+=======
+import { Providers } from "@/shared/providers";
+>>>>>>> e887cc2 (feat: 대시보드 페이지 작업 및 프로젝트 구조 변경 (#2))
 
 import "@/base/styles/index.css";
 
