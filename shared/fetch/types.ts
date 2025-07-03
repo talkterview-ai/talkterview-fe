@@ -15,10 +15,7 @@ export type TokenResponse = {
 };
 
 export type ApiResponse<T = unknown> = {
-  result: boolean;
-  code: string;
-  status: string;
+  code: number;
   message: string;
   data: T;
-  authError: boolean;
 };

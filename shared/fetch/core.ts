@@ -85,9 +85,7 @@ export class HttpCore {
 
       const data: ApiResponse<T> = await response.json();
 
-      // HTTP 레벨 에러 처리
       if (!response.ok) {
-        // 401 또는 403 에러 처리 (토큰 만료)
         if (response.status === 401 || response.status === 403) {
           await removeToken();
           this.redirectToLogin();
@@ -95,15 +93,6 @@ export class HttpCore {
         throw new Error(
           `HTTP Error: ${response.status}, ${response.statusText}`
         );
-      }
-
-      // API 레벨 에러 처리
-      if (!data.result) {
-        if (data.authError) {
-          await removeToken();
-          this.redirectToLogin();
-        }
-        throw new Error(`API Error: ${data.code}, ${data.message}`);
       }
 
       await this.handleTokenResponse(data);
