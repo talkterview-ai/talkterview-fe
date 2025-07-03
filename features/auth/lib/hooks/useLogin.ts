@@ -1,8 +1,8 @@
 "use client";
 
 import { useTransition } from "react";
-import type { LoginProvider } from "@/shared/models/auth/types";
-import { guestLogin } from "@/app/(auth)/login/_entities/apis";
+import type { LoginProvider } from "@/entities/auth/models/types";
+import { guestLogin } from "@/entities/auth/apis";
 import { redirect } from "next/navigation";
 import { PATH } from "@/shared/constants/path";
 

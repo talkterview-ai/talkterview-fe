@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import type { LoginProvider } from "@/shared/models/auth/types";
+import type { LoginProvider } from "@/entities/auth/models/types";
 import { cn } from "@/shared/utils";
 import { Button } from "@/shared/components/ui";
 

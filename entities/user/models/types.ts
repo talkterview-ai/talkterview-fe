@@ -1,4 +1,4 @@
-import type { LoginProvider } from "../auth/types";
+import type { LoginProvider } from "../../auth/models/types";
 
 export type User = {
   name: string;

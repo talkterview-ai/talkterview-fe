@@ -1,5 +1,5 @@
-import { BrandingCard } from "@/app/(auth)/login/_entities/ui";
-import { LoginForm } from "@/app/(auth)/login/_features/ui";
+import { BrandingCard } from "@/entities/auth/ui";
+import { LoginForm } from "@/features/auth/ui";
 
 const LoginPageView = () => {
   return (

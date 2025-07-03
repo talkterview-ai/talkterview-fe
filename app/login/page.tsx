@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { LoginPageView } from "./_modules";
+import { LoginPageView } from "@/modules/auth/ui";
 
 const LoginPage: NextPage = () => {
   return <LoginPageView />;

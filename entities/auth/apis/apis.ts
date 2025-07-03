@@ -2,7 +2,7 @@ import { fetchClient } from "@/shared/fetch";
 import type {
   LoginResponse,
   OAuthLoginRequest,
-} from "@/shared/models/auth/types";
+} from "@/entities/auth/models/types";
 
 export const oauthLogin = async (
   payload: OAuthLoginRequest
