@@ -13,8 +13,8 @@ import {
   CardTitle,
 } from "@/shared/components/ui";
 import { OAuthButton } from "@/app/(auth)/login/_entities/ui";
-import { oauthLogin } from "@/app/(auth)/login/_entities/api";
-import type { LoginProvider } from "@/app/(auth)/login/_entities/model/types";
+import { oauthLogin } from "@/app/(auth)/login/_entities/apis";
+import type { LoginProvider } from "@/shared/models/auth/types";
 import { PATH } from "@/shared/constants/path";
 
 const LoginForm = () => {

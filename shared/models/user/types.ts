@@ -1,17 +1,28 @@
-import type { LoginProvider } from "@/app/(auth)/login/_entities/model/types";
-import type { TokenResponse } from "@/shared/fetch/types";
+import type { LoginProvider } from "../auth/types";
 
 export type User = {
   name: string;
   profileImg: string;
 };
 
-export type OAuthLoginRequest = {
-  provider: LoginProvider;
-  code: string;
+export type Level = "입문" | "초급" | "중급" | "고급";
+
+export type Profile = User & {
+  email: string;
+  role: string;
+  field: string;
+  level: Level;
 };
 
-export type LoginResponse = {
-  user: User;
-  token?: TokenResponse;
+export type AccountStatus = "활성" | "휴먼";
+
+export type Account = {
+  provider: LoginProvider;
+  status: AccountStatus;
+  registeredAt: string;
+};
+
+export type UserProfileResponse = {
+  profile: Profile;
+  signupInfo: Account;
 };
