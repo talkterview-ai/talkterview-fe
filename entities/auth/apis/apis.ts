@@ -2,11 +2,7 @@ import { fetchClient } from "@/base/fetch";
 import type {
   LoginResponse,
   OAuthLoginRequest,
-<<<<<<<< HEAD:entities/auth/apis/apis.ts
 } from "@/entities/auth/models/types";
-========
-} from "@/shared/models/auth/types";
->>>>>>>> 70b7b79 (refactor: 구조 및 타입 수정):app/(auth)/login/_entities/apis/apis.ts
 
 export const oauthLogin = async (
   payload: OAuthLoginRequest

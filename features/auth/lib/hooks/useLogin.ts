@@ -1,11 +1,5 @@
-"use client";
-
 import { useOAuthLogin, useGuestLogin } from "@/entities/auth/apis/queries";
-import { useTransition } from "react";
 import type { LoginProvider } from "@/entities/auth/models/types";
-import { guestLogin } from "@/entities/auth/apis";
-import { redirect } from "next/navigation";
-import { PATH } from "@/shared/constants/path";
 
 const useLogin = () => {
   const oauthMutation = useOAuthLogin();
