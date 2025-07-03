@@ -6,3 +6,6 @@ export {
   CardHeader,
   CardTitle,
 } from "./card";
+export { Badge } from "./badge";
+export { Progress } from "./progress";
+export { Skeleton } from "./skeleton";
