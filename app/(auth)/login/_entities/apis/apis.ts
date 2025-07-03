@@ -1,4 +1,4 @@
-import { fetchClient } from "@/base/fetch";
+import { fetchClient } from "@/shared/fetch";
 import type {
   LoginResponse,
   OAuthLoginRequest,
