@@ -13,7 +13,6 @@ import {
   CardTitle,
 } from "@/shared/components/ui";
 import { OAuthButton } from "@/entities/auth/ui";
-import { oauthLogin } from "@/entities/auth/apis";
 import type { LoginProvider } from "@/entities/auth/models/types";
 import { PATH } from "@/shared/constants/path";
 
@@ -22,27 +21,15 @@ const LoginForm = () => {
   const code = searchParams.get("code") ?? "";
   const provider = searchParams.get("provider") as LoginProvider;
 
+  const { oauthMutation, guestMutation, handleOAuthLogin } = useLogin();
+
   useEffect(() => {
     if (!code || !provider) return;
 
-    const login = async () => {
-      try {
-        await oauthLogin({ provider, code });
-        redirect(PATH.dashboard);
-      } catch (error) {
-        console.error("login error: ", error);
-        throw error;
-      }
-    };
-
-    login();
+    oauthMutation.mutateAsync({ provider, code }).then(() => {
+      redirect(PATH.dashboard);
+    });
   }, [code, provider]);
-
-  const {
-    handleOAuthLogin,
-    handleGuestLogin,
-    isPending: isGuestLoading,
-  } = useLogin();
 
   return (
     <Card className="bg-white border-slate-200 shadow-lg">
@@ -59,6 +46,7 @@ const LoginForm = () => {
             key={provider}
             provider={provider}
             onClick={() => handleOAuthLogin(provider)}
+            isLoading={oauthMutation.isPending}
             className={
               provider === OAUTH_PROVIDERS.GOOGLE
                 ? "bg-white border-slate-300 hover:bg-slate-50"
@@ -80,8 +68,8 @@ const LoginForm = () => {
         <Button
           variant="ghost"
           className="w-full h-12 border border-slate-200 hover:bg-slate-50"
-          onClick={handleGuestLogin}
-          disabled={isGuestLoading}
+          onClick={() => guestMutation.mutate()}
+          isLoading={guestMutation.isPending}
         >
           <span className="text-gray600">게스트로 체험해보기</span>
         </Button>

@@ -9,3 +9,4 @@ export {
 export { Badge } from "./badge";
 export { Progress } from "./progress";
 export { Skeleton } from "./skeleton";
+export { LoadingSpinner } from "./spinner";

@@ -10,6 +10,7 @@ interface OAuthButtonProps {
   onClick: (provider: LoginProvider) => void;
   className?: string;
   disabled?: boolean;
+  isLoading?: boolean;
 }
 
 const OAuthButton = ({
@@ -17,6 +18,7 @@ const OAuthButton = ({
   onClick,
   className,
   disabled,
+  isLoading,
 }: OAuthButtonProps) => {
   return (
     <Button
@@ -24,10 +26,11 @@ const OAuthButton = ({
       className={cn("w-full h-12", className)}
       onClick={() => onClick(provider)}
       disabled={disabled}
+      isLoading={isLoading}
     >
       <div className="flex items-center gap-3">
         <Image
-          src={`/icons/oauth/${provider}.svg`}
+          src={`/icons/oauth/${provider.toLowerCase()}.svg`}
           alt={`${provider} 로그인`}
           width={36}
           height={36}
