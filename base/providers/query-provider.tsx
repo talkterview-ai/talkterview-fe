@@ -3,7 +3,7 @@
 import { QueryClientProvider } from "@tanstack/react-query";
 import * as React from "react";
 
-import { getQueryClient } from "@/shared/lib/query";
+import { getQueryClient } from "@/base/lib/query";
 
 export const QueryProvider = ({ children }: { children: React.ReactNode }) => {
   const queryClient = getQueryClient();

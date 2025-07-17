@@ -1,4 +1,4 @@
-import type { TokenResponse } from "@/shared/fetch/types";
+import type { TokenResponse } from "@/base/fetch/types";
 import type { User } from "../../user/models/types";
 
 export type LoginProvider = "GOOGLE" | "KAKAO" | "GUEST";

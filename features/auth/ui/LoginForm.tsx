@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { redirect, useSearchParams } from "next/navigation";
 import { useLogin } from "../lib/hooks";
-import { OAUTH_PROVIDERS } from "@/shared/constants/oauth";
+import { OAUTH_PROVIDERS } from "@/base/constants/oauth";
 import {
   Button,
   Card,
@@ -11,10 +11,10 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/shared/components/ui";
+} from "@/base/components/ui";
 import { OAuthButton } from "@/entities/auth/ui";
 import type { LoginProvider } from "@/entities/auth/models/types";
-import { PATH } from "@/shared/constants/path";
+import { PATH } from "@/base/constants/path";
 
 const LoginForm = () => {
   const searchParams = useSearchParams();

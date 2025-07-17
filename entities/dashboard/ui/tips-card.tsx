@@ -8,7 +8,7 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/shared/components/ui";
+} from "@/base/components/ui";
 
 const TipsCard = () => {
   const { data: tips } = useTodayInterviewTips(dayjs().format("YYYYMMDD"));

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { PATH } from "@/shared/constants/path";
+import { PATH } from "@/base/constants/path";
 
 type PathValue = (typeof PATH)[keyof typeof PATH];
 

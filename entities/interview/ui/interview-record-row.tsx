@@ -1,8 +1,8 @@
-import { cn } from "@/shared/utils";
+import { cn } from "@/base/utils";
 import { Badge, BarChart3, Link } from "lucide-react";
 import type { InterviewRecord } from "../models/types";
-import { Button } from "@/shared/components/ui";
-import { PATH } from "@/shared/constants/path";
+import { Button } from "@/base/components/ui";
+import { PATH } from "@/base/constants/path";
 
 interface Props {
   record: InterviewRecord;

@@ -8,11 +8,11 @@ import {
   CardTitle,
   CardContent,
   Button,
-} from "@/shared/components/ui";
+} from "@/base/components/ui";
 import { InterviewRecordRow } from "@/entities/interview/ui";
 import { ChevronRight } from "lucide-react";
-import { PATH } from "@/shared/constants/path";
-import { cn } from "@/shared/utils";
+import { PATH } from "@/base/constants/path";
+import { cn } from "@/base/utils";
 
 const RecentRecordsSection = () => {
   const { data: records } = useRecentInterviewRecords();

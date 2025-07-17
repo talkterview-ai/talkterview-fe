@@ -1,4 +1,4 @@
-import { fetchClient } from "@/shared/fetch";
+import { fetchClient } from "@/base/fetch";
 import type { UserProfileResponse } from "@/entities/user/models/types";
 
 export const getUserProfile = async (): Promise<UserProfileResponse> => {

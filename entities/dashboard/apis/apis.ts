@@ -1,4 +1,4 @@
-import { fetchClient } from "@/shared/fetch";
+import { fetchClient } from "@/base/fetch";
 import type { InterviewStats, TodayInterviewTips } from "../models/types";
 
 export const getTodayInterviewTips = async (

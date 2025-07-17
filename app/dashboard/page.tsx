@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-import { PrefetchBoundary } from "@/shared/contexts/queries";
+import { PrefetchBoundary } from "@/base/contexts/queries";
 import { userQueryOptions } from "@/entities/user/apis/queries";
 import {
   statsQueryOptions,

@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import type { LoginProvider } from "@/entities/auth/models/types";
-import { cn } from "@/shared/utils";
-import { Button } from "@/shared/components/ui";
+import { cn } from "@/base/utils";
+import { Button } from "@/base/components/ui";
 
 interface OAuthButtonProps {
   provider: LoginProvider;

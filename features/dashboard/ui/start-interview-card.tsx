@@ -9,9 +9,9 @@ import {
   CardDescription,
   CardContent,
   Button,
-} from "@/shared/components/ui";
-import { Badge } from "@/shared/components/ui";
-import { PATH } from "@/shared/constants/path";
+} from "@/base/components/ui";
+import { Badge } from "@/base/components/ui";
+import { PATH } from "@/base/constants/path";
 import { MessageSquare } from "lucide-react";
 
 const FALLBACK_LEVEL = "레벨 측정을 위해 최소 3번의 면접 진행이 필요해요";

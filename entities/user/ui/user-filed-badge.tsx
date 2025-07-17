@@ -1,7 +1,7 @@
 "use client";
 
 import { useUserProfile } from "@/entities/user/apis/queries";
-import { Badge } from "@/shared/components/ui";
+import { Badge } from "@/base/components/ui";
 
 const UserFiledBadge = () => {
   const { data: user } = useUserProfile();

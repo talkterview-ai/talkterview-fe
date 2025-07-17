@@ -3,7 +3,7 @@
 import { useInterviewStats } from "@/entities/dashboard/apis/queries";
 import { InterviewStats } from "@/entities/dashboard/models/types";
 
-import { Card, CardContent } from "@/shared/components/ui";
+import { Card, CardContent } from "@/base/components/ui";
 import { Calendar, MessageSquare, Target, type LucideIcon } from "lucide-react";
 
 type StatCardItemProps = {
