@@ -55,7 +55,6 @@ export class HttpCore {
     };
 
     const token = await getToken();
-
     if (token) {
       headers.Authorization = `Bearer ${token}`;
     }
@@ -83,7 +82,14 @@ export class HttpCore {
         body: config.data ? JSON.stringify(config.data) : undefined,
       });
 
-      const data: ApiResponse<T> = await response.json();
+      let data: ApiResponse<T>;
+      
+      try {
+        const text = await response.text();
+        data = text ? JSON.parse(text) : {};
+      } catch (error) {
+        throw new Error(`Invalid JSON response: ${error}`);
+      }
 
       if (!response.ok) {
         if (response.status === 401 || response.status === 403) {
