@@ -12,8 +12,6 @@ import {
   StatsCardSection,
   TipsCard,
   WelcomeSection,
-  LearningProgressCard,
-  QuickActionsCard,
 } from "@/entities/dashboard/ui";
 import { StartInterviewSection } from "@/features/dashboard/ui";
 import { DashboardHeader, RecentRecordsSection } from "@/modules/dashboard/ui";
@@ -42,8 +40,6 @@ export default function MainDashboard() {
             </div>
 
             <div className="space-y-6">
-              <LearningProgressCard />
-              <QuickActionsCard />
               <TipsCard />
             </div>
           </div>
