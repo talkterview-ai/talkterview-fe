@@ -1,6 +1,9 @@
 import { fetchClient } from "@/base/fetch";
 import type { InterviewStats, TodayInterviewTips } from "../models/types";
 
+/**
+ * @description 오늘의 팁 api
+ */
 export const getTodayInterviewTips = async (
   date: string
 ): Promise<TodayInterviewTips> => {
@@ -16,7 +19,18 @@ export const getTodayInterviewTips = async (
   return response.data.data;
 };
 
+/**
+ * @description 면접 기록 조회 api
+ */
 export const getInterviewStats = async (): Promise<InterviewStats> => {
   const response = await fetchClient.get<InterviewStats>("dashboard/records");
+  return response.data.data;
+};
+
+/**
+ * @description 학습 진행도 api
+ */
+export const getLearningProgress = async (): Promise<any> => {
+  const response = await fetchClient.get("dashboard/interview/weekly-target");
   return response.data.data;
 };

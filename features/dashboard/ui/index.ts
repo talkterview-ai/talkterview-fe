@@ -1,1 +1,1 @@
-export { StartInterviewCard } from "./start-interview-card";
+export { StartInterviewSection } from "./start-interview-card/start-interview-section";

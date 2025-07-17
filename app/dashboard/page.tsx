@@ -8,8 +8,14 @@ import {
 } from "@/entities/dashboard/apis/queries";
 import { recentRecordsQueryOptions } from "@/entities/interview/apis/queries";
 
-import { StatsCard, TipsCard, WelcomeSection } from "@/entities/dashboard/ui";
-import { StartInterviewCard } from "@/features/dashboard/ui";
+import {
+  StatsCardSection,
+  TipsCard,
+  WelcomeSection,
+  LearningProgressCard,
+  QuickActionsCard,
+} from "@/entities/dashboard/ui";
+import { StartInterviewSection } from "@/features/dashboard/ui";
 import { DashboardHeader, RecentRecordsSection } from "@/modules/dashboard/ui";
 
 export default function MainDashboard() {
@@ -27,10 +33,20 @@ export default function MainDashboard() {
       <main className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex flex-col gap-6">
           <WelcomeSection />
-          <TipsCard />
-          <StatsCard />
-          <StartInterviewCard />
-          <RecentRecordsSection />
+          <StatsCardSection />
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="grid lg:col-span-2 gap-6">
+              <StartInterviewSection />
+              <RecentRecordsSection />
+            </div>
+
+            <div className="space-y-6">
+              <LearningProgressCard />
+              <QuickActionsCard />
+              <TipsCard />
+            </div>
+          </div>
         </div>
       </main>
     </PrefetchBoundary>

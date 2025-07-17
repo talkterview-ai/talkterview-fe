@@ -3,7 +3,8 @@ export const PATH = {
   login: "/login",
   dashboard: "/dashboard",
   interview: "/interview",
+  pdf: "/pdf",
   fieldSelect: "/field-select",
-  feedback: "/interview/feedback",
+  feedback: (id: string) => `${PATH.interview}/${id}`,
   records: "/records",
 } as const;

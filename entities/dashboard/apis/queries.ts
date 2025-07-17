@@ -1,4 +1,8 @@
-import { getTodayInterviewTips, getInterviewStats } from "./apis";
+import {
+  getTodayInterviewTips,
+  getInterviewStats,
+  getLearningProgress,
+} from "./apis";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
 /**
@@ -34,4 +38,17 @@ export const statsQueryOptions = {
 
 export const useInterviewStats = () => {
   return useSuspenseQuery(statsQueryOptions);
+};
+
+/**
+ * @description 주간 목표 query
+ */
+export const weeklyTargetKeys = {
+  all: ["target"] as const,
+  weekly: () => [...weeklyTargetKeys.all, "weekly"] as const,
+};
+
+export const weeklyTargetQueryOptions = {
+  queryKey: weeklyTargetKeys.weekly(),
+  queryFn: getLearningProgress,
 };
