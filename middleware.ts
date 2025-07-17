@@ -2,25 +2,18 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { PATH } from "@/base/constants/path";
 
-type PathValue = (typeof PATH)[keyof typeof PATH];
-
 // 로그인한 사용자가 접근할 수 없는 경로
-const authRoutes: PathValue[] = [PATH.login];
+const authRoutes: string[] = [PATH.login];
 
 // 로그인하지 않은 사용자가 접근할 수 있는 경로
-const publicRoutes: PathValue[] = [PATH.login];
+const publicRoutes: string[] = [PATH.login];
 
 export const middleware = (request: NextRequest) => {
   const { pathname } = request.nextUrl;
   const accessToken = request.cookies.get("token")?.value;
 
-  const isPathValue = (path: string): path is PathValue => {
-    return Object.values(PATH).includes(path as PathValue);
-  };
-
-  const isAuthRoute = isPathValue(pathname) && authRoutes.includes(pathname);
-  const isPublicRoute =
-    isPathValue(pathname) && publicRoutes.includes(pathname);
+  const isAuthRoute = authRoutes.includes(pathname);
+  const isPublicRoute = publicRoutes.includes(pathname);
 
   if (accessToken) {
     if (isAuthRoute) {
