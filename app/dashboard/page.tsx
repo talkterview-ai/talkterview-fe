@@ -8,14 +8,14 @@ import {
   tipsQueryOptions,
 } from "@/entities/dashboard/apis/queries";
 import { recentRecordsQueryOptions } from "@/entities/interview/apis/queries";
-
 import {
-  StatsCardSection,
-  TipsCard,
+  DashboardHeader,
+  RecentRecordsSection,
+  StartInterviewSection,
   WelcomeSection,
-} from "@/entities/dashboard/ui";
-import { StartInterviewSection } from "@/features/dashboard/ui";
-import { DashboardHeader, RecentRecordsSection } from "@/modules/dashboard/ui";
+  StatsSection,
+  TipsSection,
+} from "@/modules/dashboard/ui";
 
 export default function MainDashboard(): NextPage {
   return (
@@ -32,7 +32,7 @@ export default function MainDashboard(): NextPage {
       <main className="max-w-6xl mx-auto px-4 py-6">
         <div className="flex flex-col gap-6">
           <WelcomeSection />
-          <StatsCardSection />
+          <StatsSection />
 
           <div className="grid lg:grid-cols-3 gap-6">
             <div className="grid lg:col-span-2 gap-6">
@@ -41,7 +41,7 @@ export default function MainDashboard(): NextPage {
             </div>
 
             <div className="space-y-6">
-              <TipsCard />
+              <TipsSection />
             </div>
           </div>
         </div>

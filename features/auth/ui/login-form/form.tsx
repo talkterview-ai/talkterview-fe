@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { redirect, useSearchParams } from "next/navigation";
-import { useLogin } from "../lib/hooks";
+import { useLogin } from "../../lib/hooks";
 import { OAUTH_PROVIDERS } from "@/base/constants/oauth";
 import {
   Button,
@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/base/components/ui";
-import { OAuthButton } from "@/entities/auth/ui";
+import { OAuthButton } from "./oauth-button";
 import type { LoginProvider } from "@/entities/auth/models/types";
 import { PATH } from "@/base/constants/path";
 
