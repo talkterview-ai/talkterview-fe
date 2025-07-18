@@ -1,4 +1,5 @@
 import dayjs from "dayjs";
+import { type NextPage } from "next";
 
 import { PrefetchBoundary } from "@/base/contexts/queries";
 import { userQueryOptions } from "@/entities/user/apis/queries";
@@ -16,7 +17,7 @@ import {
 import { StartInterviewSection } from "@/features/dashboard/ui";
 import { DashboardHeader, RecentRecordsSection } from "@/modules/dashboard/ui";
 
-export default function MainDashboard() {
+export default function MainDashboard(): NextPage {
   return (
     <PrefetchBoundary
       prefetchOptions={[
