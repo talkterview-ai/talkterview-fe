@@ -29,12 +29,12 @@ const QuickActionsSection = () => {
               <Button
                 key={index}
                 variant="ghost"
-                className="w-full justify-start text-gray-700 hover:bg-white/50"
+                className="w-1/2 justify-start text-gray-700 hover:bg-gray-100/50"
                 asChild
               >
                 <Link href={item.path}>
                   <Icon className="w-4 h-4 mr-3" />
-                  {item.label}
+                  <span className="truncate line-clamp-1">{item.label}</span>
                 </Link>
               </Button>
             );
