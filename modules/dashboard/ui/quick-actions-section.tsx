@@ -23,10 +23,11 @@ const QuickActionsSection = () => {
       </CardHeader>
       <CardContent>
         <div className="space-y-2">
-          {ITEMS.map((item) => {
+          {ITEMS.map((item, index) => {
             const Icon = item.icon;
             return (
               <Button
+                key={index}
                 variant="ghost"
                 className="w-full justify-start text-gray-700 hover:bg-white/50"
                 asChild
