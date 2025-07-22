@@ -5,9 +5,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/base/components/ui";
-import { Award, Calendar, MessageSquare } from "lucide-react";
+import { Award, Calendar, type LucideIcon, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import { PATH } from "@/base/constants/path";
+
+type ActionItemType = {
+  icon: LucideIcon;
+  path: string;
+  label: string;
+};
 
 const QuickActionsSection = () => {
   return (
@@ -17,36 +23,21 @@ const QuickActionsSection = () => {
       </CardHeader>
       <CardContent>
         <div className="space-y-2">
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-gray-700 hover:bg-white/50"
-            asChild
-          >
-            <Link href={PATH.schedule}>
-              <Calendar className="w-4 h-4 mr-3" />
-              면접 일정 등록
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-gray-700 hover:bg-white/50"
-            asChild
-          >
-            <Link href={PATH.records}>
-              <Award className="w-4 h-4 mr-3" />
-              성과 분석 보기
-            </Link>
-          </Button>
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-gray-700 hover:bg-white/50"
-            asChild
-          >
-            <Link href={PATH.community}>
-              <MessageSquare className="w-4 h-4 mr-3" />
-              커뮤니티 참여
-            </Link>
-          </Button>
+          {ITEMS.map((item) => {
+            const Icon = item.icon;
+            return (
+              <Button
+                variant="ghost"
+                className="w-full justify-start text-gray-700 hover:bg-white/50"
+                asChild
+              >
+                <Link href={item.path}>
+                  <Icon className="w-4 h-4 mr-3" />
+                  {item.label}
+                </Link>
+              </Button>
+            );
+          })}
         </div>
       </CardContent>
     </Card>
@@ -54,3 +45,21 @@ const QuickActionsSection = () => {
 };
 
 export { QuickActionsSection };
+
+const ITEMS: ActionItemType[] = [
+  {
+    icon: Calendar,
+    path: PATH.schedule,
+    label: "면접 일정 등록",
+  },
+  {
+    icon: Award,
+    path: PATH.records,
+    label: "성과 분석 보기",
+  },
+  {
+    icon: MessageSquare,
+    path: PATH.community,
+    label: "커뮤니티 참여",
+  },
+] as const;
