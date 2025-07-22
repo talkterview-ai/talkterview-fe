@@ -9,7 +9,7 @@ interface StatCardData extends Omit<StatCardProps, "value"> {
   getValue: (stats: InterviewStats) => string;
 }
 
-const FALLBACK_VALUE = "일정 추가하기";
+const FALLBACK_VALUE = "예정된 일정 없음";
 
 const StatsSection = () => {
   const { data: stats } = useInterviewStats();
