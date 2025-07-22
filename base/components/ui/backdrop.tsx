@@ -21,6 +21,18 @@ export const Backdrop = ({
   showSpinner = false,
   spinnerSize = 40,
 }: BackdropProps) => {
+  React.useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
+
   if (!open) return null;
 
   return (
