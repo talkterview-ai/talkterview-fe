@@ -7,4 +7,6 @@ export const PATH = {
   fieldSelect: "/field-select",
   feedback: (id: string) => `${PATH.interview}/${id}`,
   records: "/records",
+  schedule: "/shcedule",
+  community: "/community",
 } as const;

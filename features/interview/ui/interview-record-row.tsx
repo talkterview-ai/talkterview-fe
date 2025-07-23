@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Calendar, CheckCircle, Clock, MessageSquare } from "lucide-react";
-import type { InterviewRecord } from "../models/types";
+import type { InterviewRecord } from "../../../entities/interview/models/types";
 import { Button } from "@/base/components/ui";
 import { Badge } from "@/base/components/ui";
 import { PATH } from "@/base/constants/path";

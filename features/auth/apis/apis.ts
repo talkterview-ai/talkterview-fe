@@ -1,8 +1,6 @@
 import { fetchClient } from "@/base/fetch";
-import type {
-  LoginResponse,
-  OAuthLoginRequest,
-} from "@/entities/auth/models/types";
+import type { LoginResponse } from "@/entities/auth/models/types";
+import type { OAuthLoginRequest } from "../models/types";
 
 export const oauthLogin = async (
   payload: OAuthLoginRequest

@@ -83,7 +83,7 @@ export class HttpCore {
       });
 
       let data: ApiResponse<T>;
-      
+
       try {
         const text = await response.text();
         data = text ? JSON.parse(text) : {};
@@ -116,7 +116,6 @@ export class HttpCore {
     }
   }
 
-  // GET 메서드
   get<T = unknown>(
     url: string,
     config?: RequestConfig
@@ -124,7 +123,6 @@ export class HttpCore {
     return this.request<T>("GET", url, config);
   }
 
-  // POST 메서드
   post<T = unknown, D = unknown>(
     url: string,
     data?: D,
@@ -133,7 +131,6 @@ export class HttpCore {
     return this.request<T, D>("POST", url, { ...config, data });
   }
 
-  // PATCH 메서드
   patch<T = unknown, D = unknown>(
     url: string,
     data?: D,
@@ -142,7 +139,14 @@ export class HttpCore {
     return this.request<T, D>("PATCH", url, { ...config, data });
   }
 
-  // DELETE 메서드
+  put<T = unknown, D = unknown>(
+    url: string,
+    data?: D,
+    config?: RequestConfig<D>
+  ): Promise<HttpResponse<T>> {
+    return this.request<T, D>("PUT", url, { ...config, data });
+  }
+
   delete<T = unknown>(
     url: string,
     config?: RequestConfig

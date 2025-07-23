@@ -1,11 +1,16 @@
-import type { LoginProvider } from "../../auth/models/types";
+import type { LoginProvider } from "@/entities/auth/models/types";
 
 export type User = {
   name: string;
   profileImg: string;
 };
 
-export type Level = "입문" | "초급" | "중급" | "고급";
+export type LevelName = "EXPLORER" | "JUNIOR" | "SENIOR" | "LEAD";
+
+type Level = {
+  value: string;
+  name: LevelName;
+};
 
 export type Profile = User & {
   email: string;
@@ -25,4 +30,11 @@ export type Account = {
 export type UserProfileResponse = {
   profile: Profile;
   signupInfo: Account;
+};
+
+export type WeeklyTarget = {
+  weeklyScoreTarget: number;
+  weeklyCountTarget: number;
+  currentCount: number;
+  currentScore: number;
 };

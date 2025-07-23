@@ -5,7 +5,7 @@ import { useTodayInterviewTips } from "@/entities/dashboard/apis/queries";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/base/components/ui";
 
-const TipsCard = () => {
+const TipsSection = () => {
   const { data: tips } = useTodayInterviewTips(dayjs().format("YYYYMMDD"));
 
   return (
@@ -23,4 +23,4 @@ const TipsCard = () => {
   );
 };
 
-export { TipsCard };
+export { TipsSection };

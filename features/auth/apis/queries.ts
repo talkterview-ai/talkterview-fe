@@ -1,6 +1,7 @@
 import { useMutation, type MutationOptions } from "@tanstack/react-query";
 import { oauthLogin, guestLogin } from "./apis";
-import type { OAuthLoginRequest, LoginResponse } from "../models/types";
+import type { LoginResponse } from "@/entities/auth/models/types";
+import type { OAuthLoginRequest } from "../models/types";
 
 /**
  * OAuth 로그인

@@ -1,4 +1,4 @@
-import { useOAuthLogin, useGuestLogin } from "@/entities/auth/apis/queries";
+import { useOAuthLogin, useGuestLogin } from "@/features/auth/apis/queries";
 import type { LoginProvider } from "@/entities/auth/models/types";
 
 const useLogin = () => {

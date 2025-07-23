@@ -1,1 +1,1 @@
-export { StartInterviewSection } from "./start-interview-card/start-interview-section";
+export { UpdateWeeklyTargetDialog } from "./update-weekly-target-dialog";

@@ -10,7 +10,7 @@ import {
   Button,
   CardDescription,
 } from "@/base/components/ui";
-import { InterviewRecordRow } from "@/entities/interview/ui";
+import { InterviewRecordRow } from "@/features/interview/ui";
 import { ChevronRight, FileText } from "lucide-react";
 
 const RecentRecordsSection = () => {

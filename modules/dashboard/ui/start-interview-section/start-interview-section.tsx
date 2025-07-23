@@ -7,14 +7,15 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
 } from "@/base/components/ui";
 import { Badge } from "@/base/components/ui";
 import { Brain, FileText, MessageCircle, Sparkles } from "lucide-react";
 import { InterviewCard } from "./interview-card";
 import { PATH } from "@/base/constants/path";
 import { FeaturesInfoCard } from "./features-info-card";
-
-const FALLBACK_LEVEL = "레벨 측정을 위해 최소 3번의 면접 진행이 필요해요";
 
 const StartInterviewSection = () => {
   const { data: user } = useUserProfile();
@@ -38,13 +39,16 @@ const StartInterviewSection = () => {
               </div>
             </div>
 
-            {user.profile.level ? (
-              <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-3 py-1">
-                {user.profile.level}
-              </Badge>
-            ) : (
-              <span className="text-sm text-gray500">{FALLBACK_LEVEL}</span>
-            )}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-3 py-1">
+                  {user.profile.level.value}
+                </Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>면접을 진행함에 따라 등급이 달라져요!</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </CardHeader>
         <CardContent>

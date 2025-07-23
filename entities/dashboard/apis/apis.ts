@@ -1,5 +1,6 @@
 import { fetchClient } from "@/base/fetch";
 import type { InterviewStats, TodayInterviewTips } from "../models/types";
+import type { WeeklyTarget } from "@/entities/user/models/types";
 
 /**
  * @description 오늘의 팁 api
@@ -30,7 +31,9 @@ export const getInterviewStats = async (): Promise<InterviewStats> => {
 /**
  * @description 학습 진행도 api
  */
-export const getLearningProgress = async (): Promise<any> => {
-  const response = await fetchClient.get("dashboard/interview/weekly-target");
+export const getLearningProgress = async (): Promise<WeeklyTarget> => {
+  const response = await fetchClient.get<WeeklyTarget>(
+    "dashboard/interview/weekly-target"
+  );
   return response.data.data;
 };
