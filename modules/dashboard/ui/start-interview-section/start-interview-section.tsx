@@ -7,6 +7,9 @@ import {
   CardTitle,
   CardDescription,
   CardContent,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
 } from "@/base/components/ui";
 import { Badge } from "@/base/components/ui";
 import { Brain, FileText, MessageCircle, Sparkles } from "lucide-react";
@@ -36,9 +39,16 @@ const StartInterviewSection = () => {
               </div>
             </div>
 
-            <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-3 py-1">
-              {user.profile.level.value}
-            </Badge>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Badge className="bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 border-0 px-3 py-1">
+                  {user.profile.level.value}
+                </Badge>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>면접을 진행함에 따라 등급이 달라져요!</p>
+              </TooltipContent>
+            </Tooltip>
           </div>
         </CardHeader>
         <CardContent>
