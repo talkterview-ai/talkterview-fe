@@ -13,3 +13,5 @@ export { LoadingSpinner } from "./spinner";
 export { Backdrop } from "./backdrop";
 export * from "./dialog";
 export { Toaster } from "./sonner";
+export { Input } from "./input";
+export { Label } from "./label";
