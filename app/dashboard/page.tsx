@@ -1,5 +1,4 @@
 import dayjs from "dayjs";
-import { type NextPage } from "next";
 
 import { PrefetchBoundary } from "@/base/contexts/queries";
 import { userQueryOptions } from "@/entities/user/apis/queries";
@@ -20,7 +19,7 @@ import {
   WeeklyProgressSection,
 } from "@/modules/dashboard/ui";
 
-export default function MainDashboard(): NextPage {
+export default function MainDashboard() {
   return (
     <PrefetchBoundary
       prefetchOptions={[
