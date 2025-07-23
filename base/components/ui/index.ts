@@ -12,3 +12,4 @@ export { Skeleton } from "./skeleton";
 export { LoadingSpinner } from "./spinner";
 export { Backdrop } from "./backdrop";
 export * from "./dialog";
+export { Toaster } from "./sonner";
