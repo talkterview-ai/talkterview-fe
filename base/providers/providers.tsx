@@ -16,13 +16,13 @@ type ProvidersProps = {
 
 const Providers = ({ children }: ProvidersProps) => {
   return (
-    <OverlayProvider>
-      <QueryProvider>
+    <QueryProvider>
+      <OverlayProvider>
         <ReactQueryDevtools initialIsOpen={false} />
         {children}
-        <Toaster richColors={true} />
-      </QueryProvider>
-    </OverlayProvider>
+        <Toaster richColors={true} position="top-right" />
+      </OverlayProvider>
+    </QueryProvider>
   );
 };
 
