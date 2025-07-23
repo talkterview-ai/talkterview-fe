@@ -52,3 +52,7 @@ export const weeklyTargetQueryOptions = {
   queryKey: weeklyTargetKeys.weekly(),
   queryFn: getLearningProgress,
 };
+
+export const useWeeklyTargets = () => {
+  return useSuspenseQuery(weeklyTargetQueryOptions);
+};

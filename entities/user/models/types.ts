@@ -31,3 +31,10 @@ export type UserProfileResponse = {
   profile: Profile;
   signupInfo: Account;
 };
+
+export type WeeklyTarget = {
+  weeklyScoreTarget: number;
+  weeklyCountTarget: number;
+  currentCount: number;
+  currentScore: number;
+};

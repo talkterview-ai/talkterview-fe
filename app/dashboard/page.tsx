@@ -6,6 +6,7 @@ import { userQueryOptions } from "@/entities/user/apis/queries";
 import {
   statsQueryOptions,
   tipsQueryOptions,
+  weeklyTargetQueryOptions,
 } from "@/entities/dashboard/apis/queries";
 import { recentRecordsQueryOptions } from "@/entities/interview/apis/queries";
 import {
@@ -15,6 +16,8 @@ import {
   WelcomeSection,
   StatsSection,
   TipsSection,
+  QuickActionsSection,
+  WeeklyProgressSection,
 } from "@/modules/dashboard/ui";
 
 export default function MainDashboard(): NextPage {
@@ -25,6 +28,7 @@ export default function MainDashboard(): NextPage {
         tipsQueryOptions(dayjs().format("YYYYMMDD")),
         statsQueryOptions,
         recentRecordsQueryOptions,
+        weeklyTargetQueryOptions,
       ]}
     >
       <DashboardHeader />
@@ -41,6 +45,8 @@ export default function MainDashboard(): NextPage {
             </div>
 
             <div className="space-y-6">
+              <WeeklyProgressSection />
+              <QuickActionsSection />
               <TipsSection />
             </div>
           </div>
