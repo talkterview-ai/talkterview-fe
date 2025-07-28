@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import {
   DialogHeader,
   Dialog,
@@ -29,6 +29,10 @@ const UpdateWeeklyTargetDialog = ({
   const [goals, setGoals] = useState(initialData);
   const { mutate: updateGoals, isPending } = useWeeklyTargetMutation();
 
+  const ref = useCallback((node: any) => {
+    node?.focus();
+  }, []);
+
   return (
     <Dialog open={open} onOpenChange={close}>
       <DialogContent>
@@ -39,7 +43,18 @@ const UpdateWeeklyTargetDialog = ({
           </DialogDescription>
         </DialogHeader>
 
-        <form className="flex flex-col gap-4 mt-4">
+        <form
+          className="flex flex-col gap-4 mt-4"
+          onSubmit={(e) => {
+            e.preventDefault();
+
+            updateGoals({
+              userWeeklyCountTarget: goals.weeklyCountTarget,
+              userWeeklyScoreTarget: goals.weeklyScoreTarget,
+            });
+            close(true);
+          }}
+        >
           <div className="flex flex-col gap-1">
             <div className="space-y-2">
               <Label htmlFor="weekly-goal-input">
@@ -50,6 +65,7 @@ const UpdateWeeklyTargetDialog = ({
                 id="weekly-goal-input"
                 type="number"
                 placeholder="1~10 사이의 값을 입력하세요"
+                ref={ref}
                 value={goals.weeklyCountTarget || ""}
                 onChange={(e) => {
                   const value = e.target.value;
@@ -107,17 +123,7 @@ const UpdateWeeklyTargetDialog = ({
             >
               취소
             </Button>
-            <Button
-              type="submit"
-              isLoading={isPending}
-              onClick={() => {
-                updateGoals({
-                  userWeeklyCountTarget: goals.weeklyCountTarget,
-                  userWeeklyScoreTarget: goals.weeklyScoreTarget,
-                });
-                close(true);
-              }}
-            >
+            <Button type="submit" isLoading={isPending}>
               저장
             </Button>
           </div>
