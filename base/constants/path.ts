@@ -9,4 +9,5 @@ export const PATH = {
   records: "/records",
   schedule: "/shcedule",
   community: "/community",
+  profile: "/profile",
 } as const;
