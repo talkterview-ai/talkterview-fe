@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { Providers } from "@/base/providers";
+import { cn } from "@/base/utils";
 
 import "@/base/styles/index.css";
 
@@ -30,7 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={pretendard.className}>
+      <body
+        className={cn(
+          "min-h-screen bg-gradient-to-br from-slate-50 to-blue-50",
+          pretendard.className
+        )}
+      >
         <Providers>{children}</Providers>
       </body>
     </html>
