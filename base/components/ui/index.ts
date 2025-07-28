@@ -16,3 +16,8 @@ export { Toaster } from "./sonner";
 export { Input } from "./input";
 export { Label } from "./label";
 export { Tooltip, TooltipTrigger, TooltipContent } from "./tooltip";
+export {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "./collapsible";
