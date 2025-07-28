@@ -58,25 +58,6 @@ const LoginForm = () => {
             />
           ))}
 
-          <div className="relative my-4">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-slate-200"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray500">또는</span>
-            </div>
-          </div>
-
-          {/* 게스트 */}
-          <Button
-            variant="ghost"
-            className="w-full h-12 border border-slate-200 hover:bg-slate-50"
-            onClick={() => guestMutation.mutate()}
-            isLoading={guestMutation.isPending}
-          >
-            <span className="text-gray600">게스트로 체험해보기</span>
-          </Button>
-
           <div className="text-center pt-4">
             <p className="text-xs text-gray500">
               로그인 시 <span className="underline">이용약관</span> 및{" "}
