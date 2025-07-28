@@ -49,15 +49,17 @@ const UpdateWeeklyTargetDialog = ({
               <Input
                 id="weekly-goal-input"
                 type="number"
-                value={goals.weeklyCountTarget}
-                onChange={(e) =>
+                placeholder="1~10 사이의 값을 입력하세요"
+                value={goals.weeklyCountTarget || ""}
+                onChange={(e) => {
+                  const value = e.target.value;
                   setGoals((prev) => ({
                     ...prev,
-                    weeklyCountTarget: Number(e.target.value),
-                  }))
-                }
-                min="1"
-                max="10"
+                    weeklyCountTarget: value === "" ? 0 : Number(value),
+                  }));
+                }}
+                min={1}
+                max={10}
                 maxLength={2}
                 disabled={isPending}
               />
@@ -76,15 +78,17 @@ const UpdateWeeklyTargetDialog = ({
               <Input
                 id="score-goal-input"
                 type="number"
-                value={goals.weeklyScoreTarget}
-                onChange={(e) =>
+                placeholder="60~100 사이의 값을 입력하세요"
+                value={goals.weeklyScoreTarget || ""}
+                onChange={(e) => {
+                  const value = e.target.value;
                   setGoals((prev) => ({
                     ...prev,
-                    weeklyScoreTarget: Number(e.target.value),
-                  }))
-                }
-                min="60"
-                max="100"
+                    weeklyScoreTarget: value === "" ? 0 : Number(value),
+                  }));
+                }}
+                min={60}
+                max={100}
                 maxLength={3}
                 disabled={isPending}
               />
