@@ -18,9 +18,9 @@ export const middleware = (request: NextRequest) => {
   if (accessToken) {
     if (isAuthRoute) {
       console.info(
-        `[Middleware] Logged in user accessing ${pathname}. Redirecting to ${PATH.root}`
+        `[Middleware] Logged in user accessing ${pathname}. Redirecting to ${PATH.dashboard}`
       );
-      return NextResponse.redirect(new URL(PATH.root, request.url));
+      return NextResponse.redirect(new URL(PATH.dashboard, request.url));
     }
   } else {
     if (!isPublicRoute) {
