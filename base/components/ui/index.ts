@@ -21,3 +21,4 @@ export {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./collapsible";
+export { Avatar, AvatarFallback, AvatarImage } from "./avatar";
